@@ -142,9 +142,9 @@ public class QueryBuilder {
 
     private String assemble() {
         StringBuilder sb = new StringBuilder();
-        sb.append(StringUtils.encodePath(resource.index()));
+        sb.append(resource.index());
         sb.append("/");
-        sb.append(StringUtils.encodePath(resource.type()));
+        sb.append(resource.type());
         sb.append("/_search?");
 
         // override infrastructure params
