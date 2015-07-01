@@ -66,7 +66,7 @@ def customizePom(pom, gradleProject) {
             }
         }
 		
-		groupId = "org.elasticsearch"
+		groupId = "com.lambdacloud"
 		artifactId = project.archivesBaseName
 	}
 }
