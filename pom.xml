@@ -1,0 +1,74 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.lambdacloud</groupId>
+  <artifactId>elasticsearch-hadoop</artifactId>
+  <packaging>pom</packaging>
+  <version>2.0.3-lambda1</version>
+  <name>elasticsearch-hadoop</name>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>1.3</version>
+        <configuration>
+          <executable>./gradlew</executable>
+          <workingDirectory>${basedir}</workingDirectory>
+        </configuration>
+
+        <executions>
+          <execution>
+            <id>gradle prepare</id>
+            <phase>initialize</phase>
+            <goals><goal>exec</goal></goals>
+            <configuration>
+              <arguments> <argument>init</argument> </arguments>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>gradle compile</id>
+            <phase>compile</phase>
+            <goals><goal>exec</goal></goals>
+            <configuration>
+              <arguments> <argument>classes</argument> </arguments>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>gradle clean</id>
+            <phase>clean</phase>
+            <goals><goal>exec</goal></goals>
+            <configuration>
+              <arguments> <argument>clean</argument> </arguments>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>gradle package</id>
+            <phase>package</phase>
+            <goals><goal>exec</goal></goals>
+            <configuration>
+              <arguments> <argument>jar</argument> </arguments>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>gradle install</id>
+            <phase>install</phase>
+            <goals><goal>exec</goal></goals>
+            <configuration>
+              <arguments> <argument>install</argument> </arguments>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
