@@ -7,7 +7,7 @@
   <groupId>com.lambdacloud</groupId>
   <artifactId>elasticsearch-hadoop</artifactId>
   <packaging>pom</packaging>
-  <version>2.1.0.lambda.1-SNAPSHOT</version>
+  <version>2.1.0-lambda1</version>
   <name>elasticsearch-hadoop</name>
 
   <build>
